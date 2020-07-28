@@ -10,6 +10,7 @@
         <module name="DataStructures-01" />
         <module name="ClassLibraries" />
         <module name="Algorithm" />
+        <module name="Concurrency" />
         <module name="DataStructure" />
       </profile>
     </annotationProcessing>

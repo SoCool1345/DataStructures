@@ -12,6 +12,7 @@
         <module>DataStructure</module>
         <module>Algorithm</module>
         <module>ClassLibraries</module>
+        <module>Concurrency</module>
     </modules>
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
