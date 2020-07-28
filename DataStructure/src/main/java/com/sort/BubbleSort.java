@@ -16,6 +16,7 @@ public class BubbleSort {
             for (int j = 0; j < array.length-1-i; j++) {
                 if(array[j]>array[j+1])swap(j);
             }
+            
             System.out.println("第"+(i+1)+"趟");
             System.out.println(Arrays.toString(array));
             if(!flag){

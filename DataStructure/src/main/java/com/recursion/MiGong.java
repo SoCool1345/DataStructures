@@ -5,6 +5,7 @@ import org.junit.Test;
 public class MiGong {
     @Test
     public void test(){
+
         int[][] map=new int[8][7];
         for (int i = 0; i < 7; i++) {
             map[0][i]=1;
@@ -60,8 +61,8 @@ public class MiGong {
                 return false;
             }
 
-
         }
     }
 
 }
+

@@ -1,4 +1,4 @@
-package com.BinarySortTree;
+package com.tree.BinarySortTree;
 
 import org.junit.Test;
 

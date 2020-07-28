@@ -1,4 +1,4 @@
-package com.AVLTree;
+package com.tree.AVLTree;
 
 
 import org.junit.Test;

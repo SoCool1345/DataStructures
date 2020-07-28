@@ -1,17 +1,8 @@
-package com.AVLTree;
+package com.tree.BinarySortTree;
 
-public class AVLTree {
+public class BinarySortTree {
     private Node root;
-    public AVLTree(){}
-
-    public Node getRoot() {
-        return root;
-    }
-
-    public void setRoot(Node root) {
-        this.root = root;
-    }
-
+    public BinarySortTree(){}
     public void add(Node node){
         if(root==null){
             root=node;
@@ -127,56 +118,6 @@ class Node {
     public Node(int value) {
         this.value = value;
     }
-
-    public int leftHeight(){
-        if(left==null){
-            return 0;
-        }else {
-            return left.height();
-        }
-    }
-    public int rightHeight(){
-        if(right==null){
-            return 0;
-        }else {
-            return right.height();
-        }
-    }
-    /**
-     *
-     * @return 返回当前子树的高度
-     */
-    public int height(){
-        return Math.max((left==null)?0:left.height(),right==null?0:right.height())+1;
-    }
-
-    /**
-     * 当右子树大于左子树时向左旋转
-     */
-    public void leftRotate(){
-        //创建新的结点，以当前根结点的值
-        Node newNode = new Node(value);
-        //把新的结点的左子树设置成当前结点的左子树
-        newNode.left = left;
-        //把新的结点的右子树设置成带你过去结点的右子树的左子树
-        newNode.right = right.left;
-        //把当前结点的值替换成右子结点的值
-        value = right.value;
-        //把当前结点的右子树设置成当前结点右子树的右子树
-        right = right.right;
-        //把当前结点的左子树(左子结点)设置成新的结点
-        left = newNode;
-    }
-    //右旋
-    public void rightRotate(){
-        Node newNode=new Node(value);
-        newNode.right=right;
-        newNode.left=left.right;
-        value=left.value;
-        right=newNode;
-        left=left.left;
-    }
-
     public void add(Node node){
         if(node==null){
             return;
@@ -194,29 +135,6 @@ class Node {
                 this.right=node;
             }
         }
-
-        if(rightHeight()-leftHeight()>1){//左旋
-            if(right.leftHeight()>right.rightHeight()){
-                right.rightRotate();
-                leftHeight();
-            }else leftRotate();
-            return;
-        }
-        if(leftHeight()-rightHeight()>1){//右旋
-            //如果它的左子树的右子树高度大于它的左子树的高度
-            if(left != null && left.rightHeight() > left.leftHeight()) {
-                //先对当前结点的左结点(左子树)->左旋转
-                left.leftRotate();
-                //再对当前结点进行右旋转
-                rightRotate();
-            } else {
-                //直接进行右旋转即可
-                rightRotate();
-            }
-        }
-
-
-
     }
     public void infixOrder(){
         if(this.left!=null){
